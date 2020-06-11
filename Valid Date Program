@@ -1,0 +1,26 @@
+print("Welcome to Date Program")
+Day = int(input("Enter the Day :")) 
+Month = int(input("Enter the Month :"))
+Year = int(input("Enter the Year :"))
+if Month == 1 or Month == 3 or Month == 5 or Month == 7 or Month == 8 or Month == 10 or Month == 12:
+    max_days = 31
+elif Month == 4 or Month == 6 or Month == 9 or Month == 11:
+    max_days = 30
+elif Year%4 == 0 and Year%100 != 0 or Year%400 == 0:
+    max_days = 29
+else:
+    max_days = 28
+
+if Day < 1 or Day > max_days:
+    print("\nEntered Date is Invalid")
+    if Month < 1 or Month > 12:
+        print("\nPlease check Day and Month Range")
+        
+elif Month < 1 or Month > 12:
+    print("Entered date is Wrong")
+    print("Please check Month Range")
+
+else:
+    print(f"Your Date {Day}/{Month}/{Year} is Valid")
+print()    
+print("Thanks for Using This Program")
