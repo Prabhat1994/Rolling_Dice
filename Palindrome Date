@@ -1,0 +1,42 @@
+print("Welcome to Palindrome Program")
+Day = int(input("Enter the Day :")) 
+Month = int(input("Enter the Month :"))
+Year = int(input("Enter the Year :"))
+if Month == 1 or Month == 3 or Month == 5 or Month == 7 or Month == 8 or Month == 10 or Month == 12:
+    max_days = 31
+elif Month == 4 or Month == 6 or Month == 9 or Month == 11:
+    max_days = 30
+elif Year%4 == 0 and Year%100 != 0 or Year%400 == 0:
+    max_days = 29
+else:
+    max_days = 28
+if Month < 1 or Month > 12 or Day < 1 or Day > max_days:
+    print("Date and Month is Invalid")
+    print("Please check Date and Month Range")
+elif Month < 1 or Month > 12:
+    print("Month is Invalid")
+    print("Please check Month Range")
+elif Day < 1 or Day > max_days:
+    print("Day is Invalid")
+    print("Please check the Day Range")
+elif Year <1900 or Year > 3000:
+    print("Year is Invalid")
+    print("Please check the Year Range")
+else:
+    print(f"Your Date {Day}/{Month}/{Year} is Valid ")
+    dd = str(Day)
+    mm = str(Month)
+    YYYY = str(Year)
+    if Month < 10:
+        mm = "0"+mm
+    elif Day <10:
+        dd = "0"+mm
+    given_date = dd+mm+YYYY
+#     Date = input("Enter the Date in dd/mm/yyyy inn this format: ")
+#     given_date = Date.replace("/","")
+#     print(given_date)
+    reversed_Date = given_date[::-1]
+    if given_date == reversed_Date:
+        print(f"{given_date} = {reversed_Date} is Palindrome")
+    else:
+        print(f"{given_date} = {reversed_Date}  is not Palindrome") 
