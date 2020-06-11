@@ -1,0 +1,11 @@
+print("Welcome to Prime Number Program")
+num = int(input("Enter the Choice: "))
+if num >1:
+    for i in range(2,num):
+        if (num%i)==0:
+            print(f"Opps !! {num} is not a prime Number")
+            break
+    else:
+        print(f"Yeah !! {num} is prime number")
+else:
+    print(f"Opps !! {num} is not prime number")
