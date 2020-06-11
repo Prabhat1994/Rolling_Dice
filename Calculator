@@ -1,63 +1,74 @@
 print("Welcome to Calculator Programme")
 import math
-def add(num1, num2): 
+def add(num1, num2):
     return num1 + num2
-def subtract(num1, num2): 
-    return num1 - num2 
-def multiply(num1, num2): 
+def subtract(num1, num2):
+    return num1 - num2
+def multiply(num1, num2):
     return num1 * num2
-def divide(num1, num2): 
+def divide(num1, num2):
     return num1 / num2
-def squareroot(num1): 
+def squareroot(num1):
     return math.sqrt(num1)
 while True:
     print("Please select operation -\n"  
-        "1. Add\n" 
-        "2. Subtract\n" 
+        "1. Add\n"
+        "2. Subtract\n"
         "3. Multiply\n"  
         "4. Divide\n"
         "5. Squareroot\n")
     select = int(input("What operation you want to perform : \nPlease Enter Key: 1, 2, 3, 4, 5:"))
     while select  < 1 or select > 5:
         select = int(input("Enter Valid Key Again : "))
-    if select == 1: 
+    if select == 1:
         print("Welcome to Addition")
-        number_1 = int(input("Enter first number: ")) 
+        number_1 = int(input("Enter first number: "))
         number_2 = int(input("Enter second number: "))
-        print(number_1, "+", number_2, "=", add(number_1, number_2)) 
-    elif select == 2: 
+        print(number_1, "+", number_2, "=", add(number_1, number_2))
+    elif select == 2:
         print("Welcome to Subtraction")
-        number_1 = int(input("Enter first number: ")) 
+        number_1 = int(input("Enter first number: "))
         number_2 = int(input("Enter second number: "))
-        print(number_1, "-", number_2, "=", subtract(number_1, number_2)) 
-    elif select == 3: 
+        print(number_1, "-", number_2, "=", subtract(number_1, number_2))
+    elif select == 3:
         print("Welcome to Multiplication")
-        number_1 = int(input("Enter first number: ")) 
+        number_1 = int(input("Enter first number: "))
         number_2 = int(input("Enter second number: "))
-        print(number_1, "*", number_2, "=", multiply(number_1, number_2)) 
-    elif select == 4: 
+        print(number_1, "*", number_2, "=", multiply(number_1, number_2))
+    elif select == 4:
         print("Welcome to Division")
-        number_1 = int(input("Enter first number: ")) 
+        number_1 = int(input("Enter first number: "))
         number_2 = int(input("Enter second number: "))
         print(number_1, "/", number_2, "=", divide(number_1, number_2))
-    elif select == 5: 
+    elif select == 5:
         print("Welcome to Division")
-        number_1 = int(input("Enter first number: ")) 
-        print(number_1,"=",round(squareroot(number_1),2))   
+        number_1 = int(input("Enter first number: "))
+        print(number_1,"=",round(squareroot(number_1),2))  
                  
-    print("Do you want to play again? (Y/N)") 
-    ans = input() 
+    print("Do you want to play again? (Y/N)")
+    ans = input()
     print()
-
-    if ans == 'n' or ans == 'N': 
+    if ans == 'Y' or ans == 'y':
+        continue
+    if ans == 'n' or ans == 'N':
         break
     else :
-        print("Please Enter Right Keyword : ")
-        print()
-        print("Do you want to play again? (Y/N)") 
-        ans = input() 
-        print() 
-        if ans == 'n' or ans == 'N': 
+        if ans != 'y' or ans != 'Y':
+            print("Press Right Key Again ")
+            print("Do you want to play again? (Y/N)")
+            ans = input()
+            if ans == 'Y' or ans == 'y':
+                continue
+            if ans != 'y' or ans != 'Y':
+                print("Press Final attempt Key  ")
+                print("Do you want to play again? (Y/N)")
+                ans = input()
+            if ans == 'Y' or ans == 'y':
+                continue
+        if ans == 'n' or ans == 'N':
             break
-              
+        elif ans != 'y' or ans != 'Y':
+            print("Max Attempt done !! Try Next time with right Key")
+            break
+             
 print("\nThanks for Using Calculator")
