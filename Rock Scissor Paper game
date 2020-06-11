@@ -1,0 +1,57 @@
+## Program to implement Rock paper scissor game
+import random
+print("Welcome to the Program of Rock paper scissor game")
+print()
+print("Please read winning rule as follow: \n",
+      "1)Rock Vs Paper :- Paper Win\n",
+      "2)Rock vs Scissor :- Rock win \n", 
+      "3)Paper vs scissor :- Scissor win \n")
+while True:
+    print("Enter the choice \n 1.Rock \n 2.Paper \n 3.Scissor \n")
+    choice = int(input("Enter the choice no."))
+    while choice >3 or choice < 1:
+        choice = int(input("Enter the Valid Choice"))
+    if choice == 1: 
+        choice_name = 'Rock'
+    elif choice == 2: 
+        choice_name = 'Paper'
+    else: 
+        choice_name = 'Scissor'
+    print("Your Choice is",choice_name)
+    print()
+    print("Computer turn is ...")
+    computer_choice = random.randint(1,3)
+    while computer_choice == choice:
+        computer_choice = random.randint(1,3)
+    if computer_choice == 1: 
+        computer_choice_name = 'Rock'
+    elif computer_choice == 2: 
+        computer_choice_name = 'paper'
+    else: 
+        computer_choice_name = 'scissor'
+    print("Computer choice is", computer_choice_name)
+    print(choice_name + " V/s ",computer_choice_name) 
+    if((choice == 1 and computer_choice == 2) or
+          (choice == 2 and computer_choice ==1 )): 
+        print("paper wins => ", end = "") 
+        result = "Paper"
+          
+    elif((choice == 1 and computer_choice == 3) or
+        (choice == 3 and computer_choice == 1)): 
+        print("Rock wins =>", end = "") 
+        result = "Rock"
+    else: 
+        print("Scissor wins =>", end = "") 
+        result = "Scissor"
+        
+    if result == choice_name: 
+        print("Your choice wins") 
+    else: 
+        print("Computer wins") 
+          
+    print("Do you want to play again? (Y/N)") 
+    ans = input() 
+    print()
+    if ans == 'n' or ans == 'N': 
+        break
+print("\nThanks for playing Game") 
