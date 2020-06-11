@@ -1,0 +1,14 @@
+import random
+min = 1
+max = 6
+roll_again = input("Roll the Dice....")
+while True:
+    while roll_again == "Yes" or roll_again == "yes":
+        print("Rolling the Dice....")
+        print("The Value is ....")
+        print(random.randint(min,max))
+        roll_again = input(" Roll the Dice Again : ")    
+    else:
+        print("Given Input is Wrong !! Thanks for Playing Dice Game.")
+        print("Try Again with Yes/yes Keyword")
+        break
